@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$MUMDUMI - Forget The Subway, We're Going To The Moon</title>
+    <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918bb681a4ae8fb888d47_ChatGPT%20Image%20Nov%203%2C%202025%2C%2008_19_43%20PM%20(1).png">
+    <style>
+        @font-face {
+            font-family: 'Comico';
+            src: url('/Comico.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comico', 'Courier New', monospace;
+            background: white;
+            color: #000;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #000;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 64px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .header .tagline {
+            font-size: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            position: relative;
+            background-image: url('https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+
+        .hero-image {
+            max-width: 400px;
+            width: 90%;
+            height: auto;
+            filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.3));
+        }
+
+        .ca-address {
+            background: #3C3B6E;
+            color: white;
+            padding: 15px;
+            margin: 30px auto;
+            max-width: 90%;
+            border-radius: 25px;
+            font-size: 18px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .copy-btn {
+            background: white;
+            color: #3C3B6E;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        .ticker-tape {
+            background: transparent;
+            padding: 30px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: scroll 20s linear infinite;
+        }
+
+        .ticker-content span {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 0 60px;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .disclaimer {
+            font-size: 14px;
+            text-align: center;
+            color: #666;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .how-to-buy {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .buy-step {
+            text-align: center;
+            padding: 30px;
+            border: 2px solid #000;
+            border-radius: 10px;
+        }
+
+        .buy-step h3 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #3C3B6E;
+        }
+
+        .buy-step h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .buy-step p {
+            font-size: 15px;
+            line-height: 1.6;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .buy-btn {
+            background: #3C3B6E;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            margin-top: 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .buy-btn.phantom-btn {
+            background: #ab9ff2;
+            color: white;
+        }
+
+        .buy-btn.moonpay-btn {
+            background: #7914f6;
+            color: white;
+            padding: 12px 40px;
+        }
+
+        .buy-btn.pumpfun-btn {
+            background: transparent;
+            padding: 0;
+            border: none;
+        }
+
+        .buy-btn:hover {
+            opacity: 0.9;
+        }
+
+        .buy-btn.secondary {
+            background: #B22234;
+        }
+
+        .modal-box {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #3C3B6E;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .modal-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .modal-box p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .modal-box .checkmark {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+        }
+
+        .modal-box .social-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .modal-box .social-buttons img {
+            cursor: pointer;
+            transition: opacity 0.2s;
+            height: 50px;
+            width: auto;
+        }
+
+        .modal-box .social-buttons img:hover {
+            opacity: 0.8;
+        }
+
+        .flag-divider {
+            height: 100px;
+            background: white;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .flag-divider-content {
+            display: flex;
+            animation: slideFlags 20s linear infinite;
+            gap: 20px;
+        }
+
+        .flag-divider-content img {
+            height: 100px;
+            width: auto;
+            flex-shrink: 0;
+        }
+
+        @keyframes slideFlags {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .tokenomics {
+            background: #f9f9f9;
+        }
+
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .token-item {
+            text-align: center;
+        }
+
+        .token-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .token-item h4 {
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .token-item p {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #666;
+        }
+
+        .donate {
+            text-align: center;
+        }
+
+        .donate-image {
+            width: 100px;
+            height: auto;
+            margin: 20px auto;
+        }
+
+        .donate p {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 20px auto;
+            text-transform: uppercase;
+        }
+
+        .donate-btn {
+            background: #3C3B6E;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .community {
+            background: #f9f9f9;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .community-item {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .community-item img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .community-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .community-buttons img {
+            cursor: pointer;
+            transition: opacity 0.2s;
+            height: 50px;
+            width: auto;
+        }
+
+        .community-buttons img:hover {
+            opacity: 0.8;
+        }
+
+        .memes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+            margin-bottom: 0;
+        }
+
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section:last-of-type {
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .meme-item {
+            aspect-ratio: 1;
+            background: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .meme-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .footer {
+            background: #3C3B6E;
+            color: white;
+            padding: 60px 20px 20px 20px;
+            position: relative;
+            overflow: visible;
+            margin-top: 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            padding-bottom: 40px;
+        }
+
+        .footer h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .footer p {
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-ticker {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .footer-bottom a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: white;
+            transition: opacity 0.2s;
+        }
+
+        .footer-bottom a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-bottom img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .footer-character {
+            position: absolute;
+            right: 50px;
+            bottom: 20%;
+            width: 450px;
+            height: auto;
+            z-index: 3;
+        }
+
+        .side-hand {
+            position: fixed;
+            left: -200px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            height: auto;
+            z-index: 999;
+            transition: left 0.5s ease-out;
+            pointer-events: none;
+        }
+
+        .side-hand.show {
+            left: 0;
+        }
+
+        .sticky-nav {
+            position: fixed;
+            top: -100px;
+            left: 0;
+            right: 0;
+            background: white;
+            border-bottom: 3px solid #000;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            transition: top 0.3s ease-out;
+        }
+
+        .sticky-nav.show {
+            top: 0;
+        }
+
+        .sticky-nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .sticky-nav-left img {
+            height: 50px;
+            width: auto;
+        }
+
+        .sticky-nav-left span {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .sticky-nav-right {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .sticky-nav-right img {
+            cursor: pointer;
+            transition: opacity 0.2s;
+            height: 40px;
+            width: auto;
+        }
+
+        .sticky-nav-right img:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .hero {
+                min-height: 300px;
+            }
+
+            .hero-image {
+                max-width: 250px;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
+
+            .how-to-buy {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-box {
+                right: 10px;
+                bottom: 10px;
+                max-width: 250px;
+                padding: 20px;
+            }
+
+            .modal-box .social-buttons img {
+                height: 40px;
+            }
+
+            .footer-character {
+                width: 250px;
+                right: 10px;
+                bottom: 10%;
+            }
+
+            .footer-bottom {
+                font-size: 18px;
+            }
+
+            .footer-bottom img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+            .sticky-nav-left span {
+                font-size: 18px;
+            }
+
+            .sticky-nav-left img {
+                height: 40px;
+            }
+
+            .sticky-nav-right img {
+                height: 30px;
+            }
+
+            .community-buttons img {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <div class="sticky-nav" id="stickyNav">
+        <div class="sticky-nav-left">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093a85113c7e26d7912e6b_mumdumi%20(1)%20(1).png" alt="Mumdumi Head">
+            <span>$MUMDUMI</span>
+        </div>
+        <div class="sticky-nav-right">
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cba0db485064d0267ca_68d5c1872568958fd78018bb_twitter.png" alt="X Community">
+            </a>
+            <a href="https://pump.fun" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cbeb0e0ed83a682a1c1_68d5c1872568958fd78018bb_twitter%20(1).png" alt="Buy $MUMDUMI">
+            </a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>$MUMDUMI</h1>
+        <p class="tagline">Forget The Subway, We're Going To The Moon</p>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690910d7368a8cdc9729c5d0_mumdumi.png" alt="Zuhren Mumdumi" class="hero-image">
+        </div>
+    </div>
+
+    <!-- CA Address -->
+    <div class="ca-address">
+        <span id="caAddress">CA: PASTE_YOUR_CONTRACT_ADDRESS_HERE</span>
+        <button class="copy-btn" onclick="copyCA()">COPY</button>
+    </div>
+
+    <!-- Ticker Tape -->
+    <div class="ticker-tape">
+        <div class="ticker-content">
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+            <span>$MUMDUMI</span>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="section">
+        <h2>ABOUT</h2>
+        <p class="about-text">
+            in 2025, nuw yerk shitty had only wan mayor durin da first weeks of spring. da undeposabul zuhren iz not only da best politishun, he iz also da best memekoin. he duz da best intervews, makes da best meemz, and has da best rallys. mumdumi alwayz comes thru for his supporterz—jus like dis memekoin. $MUMDUMI iz for da believrs, da paytriots, and da peeple who no greatness wen dey see it.
+        </p>
+        <p class="disclaimer">$mumdumi iz a memekoin wit no intrinsik value or ekspektashun ov finanshul return. dis token iz for entertainmunt purposez only.</p>
+    </div>
+
+    <!-- How to Buy Section -->
+    <div class="section">
+        <h2>HOW TO BUY</h2>
+        <div class="how-to-buy">
+            <div class="buy-step">
+                <h3>1</h3>
+                <h4>CREAT A WALLET</h4>
+                <p>download fantom or ur wallet of choyce from da app stor or googul play stor for free. desktop userz, download da googul chrome extenshun by goin to Phantom.app.</p>
+                <a href="https://phantom.com" target="_blank" rel="noopener noreferrer" class="buy-btn phantom-btn">
+                    <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909429496269acb23426f72_favicon.png" alt="Phantom" style="width: 20px; height: 20px;">
+                    WALLET
+                </a>
+            </div>
+            <div class="buy-step">
+                <h3>2</h3>
+                <h4>GET SUM $SOL</h4>
+                <p>hav SOL in ur wallet to switch to $MUMDUMI. if u dont hav any SOL, u can buy direktly on fantom, transfer from anuther wallet, or buy on anuther exchange and send it to ur wallet.</p>
+                <a href="https://moonpay.com" target="_blank" rel="noopener noreferrer" class="buy-btn moonpay-btn">
+                    <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69094331de68b81681e3513a_moonpay-review-logo-big-v2.png" alt="MoonPay" style="height: 20px; width: auto;">
+                </a>
+            </div>
+            <div class="buy-step">
+                <h3>3</h3>
+                <h4>GO TO PUMP.FUN</h4>
+                <p>konect to pump.fun. go to pump.fun in googul chrome or on da browzer inside ur fantom app. konect ur wallet. paste da $MUMDUMI token address into pump.fun, selekt MUMDUMI, and konfirm. wen fantom prompts u for a wallet signature, sign.</p>
+                <a href="https://pump.fun" target="_blank" rel="noopener noreferrer" class="buy-btn pumpfun-btn">
+                    <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cbeb0e0ed83a682a1c1_68d5c1872568958fd78018bb_twitter%20(1).png" alt="Pump.fun" style="height: 40px; width: auto;">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flag Divider -->
+    <div class="flag-divider">
+        <div class="flag-divider-content" id="flagContent">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+            <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909349c3b5626e8cec01f9a_background.avif" alt="Flag">
+        </div>
+    </div>
+
+    <!-- Tokenomics Section -->
+    <div class="section tokenomics">
+        <h2>TOKENIMICS</h2>
+        <div class="tokenomics-grid">
+            <div class="token-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918ba5773262a941a46be_burnt.png" alt="LP Burnt">
+                <h4>LP BURNT</h4>
+            </div>
+            <div class="token-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918bab7cb54091e312996_mint%20revoked.png" alt="Mint Revoked">
+                <h4>MINT REVOKED</h4>
+            </div>
+            <div class="token-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918bbdd8e8d5304ab81cc_0tax.png" alt="0% Tax">
+                <h4>0% TAX</h4>
+                <p>*unles ur rech den 70%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Creator Rewards Section -->
+    <div class="section donate">
+        <h2>CREATOR REWARDS</h2>
+        <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690910d7368a8cdc9729c5d0_mumdumi.png" alt="Mumdumi" class="donate-image">
+        <p>all creator rewards will go to marketing & promoting $mumdumi for da big day tomorrow</p>
+    </div>
+
+    <!-- Community Section -->
+    <div class="section community">
+        <h2>KOMMUNITY</h2>
+        <div class="community-grid">
+            <div class="community-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918bba18b57bf69739fab_crowd.png" alt="Crowd">
+            </div>
+            <div class="community-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918baa524e1950cb98cfd_kult.png" alt="Join the Kult">
+                <div class="community-buttons">
+                    <a href="https://x.com" target="_blank" rel="noopener noreferrer">
+                        <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cba0db485064d0267ca_68d5c1872568958fd78018bb_twitter.png" alt="X Community">
+                    </a>
+                    <a href="https://pump.fun" target="_blank" rel="noopener noreferrer">
+                        <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/69093cbeb0e0ed83a682a1c1_68d5c1872568958fd78018bb_twitter%20(1).png" alt="Buy $MUMDUMI">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memes Section -->
+    <div class="section">
+        <h2>MEEMZ</h2>
+        <div class="memes-grid">
+            <div class="meme-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690910d7368a8cdc9729c5d0_mumdumi.png" alt="Meme 1">
+            </div>
+            <div class="meme-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918ba9f4af6d65101b083_4mayor.png" alt="Meme 2">
+            </div>
+            <div class="meme-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918baa524e1950cb98cfd_kult.png" alt="Meme 3">
+            </div>
+            <div class="meme-item"></div>
+            <div class="meme-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690910d7368a8cdc9729c5d0_mumdumi.png" alt="Meme 5">
+            </div>
+            <div class="meme-item"></div>
+            <div class="meme-item"></div>
+            <div class="meme-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918bba18b57bf69739fab_crowd.png" alt="Meme 8">
+            </div>
+            <div class="meme-item"></div>
+            <div class="meme-item"></div>
+            <div class="meme-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690910d7368a8cdc9729c5d0_mumdumi.png" alt="Meme 11">
+            </div>
+            <div class="meme-item"></div>
+            <div class="meme-item"></div>
+            <div class="meme-item"></div>
+            <div class="meme-item">
+                <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918ba9f4af6d65101b083_4mayor.png" alt="Meme 15">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <h2>$MUMDUMI</h2>
+            <p>copyright© zuhren mumdumi</p>
+            <p>MUMDUMI IZ A MEMEKOIN KREATED FOR SATYR AND SOSHUL KOMMENTARY. $MUMDUMI IZ A MEMEKOIN WIT NO INTRINSIK VALUE OR EKSPEKTASHUN OV FINANSHUL RETURN.</p>
+            <p>dis token iz for entertainmunt purposez only and iz not an investmunt. we r not responsibul or liabul for any finanshul loss.</p>
+            <div class="footer-ticker">
+                $MUMDUMI $MUMDUMI $MUMDUMI
+            </div>
+            <div class="footer-bottom">
+                <a href="https://x.com/booleansolana" target="_blank" rel="noopener noreferrer">
+                    <span>BY BOOLEAN</span>
+                    <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/6909402e05897bfc0d568daf_tAIcOSUT_400x400-removebg-preview.png" alt="Boolean">
+                </a>
+            </div>
+        </div>
+        <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918ba295a02fb454851b5_underwear.png" alt="Mumdumi Character" class="footer-character">
+    </div>
+
+    <!-- Side Hand -->
+    <img src="https://cdn.prod.website-files.com/69082c5061a39922df8ed3b6/690918ba8d50ff1eaa9f4885_popsout.png" alt="Hand" class="side-hand" id="sideHand">
+
+    <script>
+        // Copy CA Address
+        function copyCA() {
+            const caText = document.getElementById('caAddress').textContent.replace('CA: ', '');
+            navigator.clipboard.writeText(caText).then(() => {
+                alert('Contract Address copied to clipboard!');
+            });
+        }
+
+        // Sticky Nav on Scroll
+        window.addEventListener('scroll', () => {
+            const stickyNav = document.getElementById('stickyNav');
+            const scrollPosition = window.scrollY;
+            
+            if (scrollPosition > 100) {
+                stickyNav.classList.add('show');
+            } else {
+                stickyNav.classList.remove('show');
+            }
+        });
+
+        // Side Hand Animation on Scroll
+        let handShown = false;
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const sideHand = document.getElementById('sideHand');
+            
+            // Show hand after scrolling past 1.5 screen heights
+            if (scrollPosition > windowHeight * 1.5 && !handShown) {
+                sideHand.classList.add('show');
+                handShown = true;
+                
+                // Hide after 3 seconds
+                setTimeout(() => {
+                    sideHand.classList.remove('show');
+                }, 3000);
+            }
+        });
+
+        // Duplicate ticker content for infinite scroll
+        const tickerContent = document.querySelector('.ticker-content');
+        tickerContent.innerHTML = tickerContent.innerHTML + tickerContent.innerHTML;
+
+        // Duplicate flag content for infinite scroll
+        const flagContent = document.getElementById('flagContent');
+        flagContent.innerHTML = flagContent.innerHTML + flagContent.innerHTML;
+    </script>
+</body>
+</html>
